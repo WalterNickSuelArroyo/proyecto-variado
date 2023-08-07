@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Bienvenidos A Mi Pagina Web | Inicio</title>
+  <script src="js/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Estilos Css -->
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="icon" type="./img/png" sizes="32x32" href="./img/favicon.png">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500,700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Ir Arriba -->
+  <div class="go-top">
+    <span class="fas fa-angle-up"></span>
+  </div>
+
+  <!-- Menu de Navegacion -->
+  <header id="header">
+    <nav class="menu">
+      <div class="logo-box">
+        <h1><a href="#">Artistas Web</a></h1>
+        <span class="btn-menu"><i class="fas fa-bars"></i></span>
+      </div>
+
+      <div class="list-container">
+        <ul class="lists">
+          <li><a href="#" class="active">Inicio</a></li>
+          <li><a href="sobremi.html">Sobre Mi</a></li>
+          <li><a href="servicios.html">Servicios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Imagen Header -->
+    <div class="img-header">
+      <div class="welcome">
+        <h1>Bienvenidos A Mi Pagina Web</h1>
+        <hr>
+        <p>SAMUEL SANTOS</p>
+      </div>
+    </div>
+
+    <div class="skew-abajo"></div>
+
+  </header>
+
+  <main>
+
+    <!-- SECCIÓN NOTICIAS -->
+    <section id="noticias" class="container">
+      <h2 class="titulo-noticias">Noticias Recientes</h2>
+      <div class="row">
+        <!-- Aquí se cargarán las noticias desde el archivo JSON -->
+        <div id="lista-noticias1" class="col-md-6">
+          <!-- Las noticias de la primera fila se cargarán aquí -->
+        </div>
+        <div id="lista-noticias2" class="col-md-6">
+          <!-- Las noticias de la segunda fila se cargarán aquí -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Nuestros proyectos -->
+    <section class="our-projects">
+      <div class="skew-arriba"></div>
+      <div class="deg-background"></div>
+
+      <div class="ejeZproject">
+        <div class="container-project">
+          <div class="project-title">
+            <h2>Nuestros Proyectos</h2>
+            <hr>
+          </div>
+          <div class="project-img">
+            <img src="img/proyec.png" alt="">
+            <img src="img/proyec1.png" alt="">
+            <img src="img/proyec2.png" alt="">
+          </div>
+          <div class="skew-abajo"></div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonios">
+      <div class="testimonios-title">
+        <h2>Testimonios</h2>
+        <hr>
+      </div>
+
+      <div class="box-testimonio">
+        <div class="card-testimonio">
+          <div class="testimonio-text">
+            <h4>Amanta Castillo</h4>
+            <p>muy puntuales</p>
+          </div>
+        </div>
+
+        <div class="card-testimonio">
+          <div class="testimonio-text">
+            <h4>Clara Smilla</h4>
+            <p>"muy contenta con ls resultados que garantizan</p>
+          </div>
+        </div>
+
+        <div class="card-testimonio">
+          <div class="testimonio-text">
+            <h4>Oscar Muñoz - Fundandor</h4>
+            <p>excelentes trabajos muy recomendado</p>
+          </div>
+        </div>
+
+        <div class="card-testimonio">
+          <div class="testimonio-text">
+            <h4>Roberto Perez</h4>
+            <p>Buenos resultados</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="skew-arriba"></div>
+    <div class="deg-footer"></div>
+
+    <div class="ejeZfooter">
+      <div class="footer-content">
+        <div class="footer-title">
+          <div class="footer-text">
+            <li>
+              <div class="contenedor">
+                <a href="#" class="facebook">
+                  <i><i class="fa-brands fa-facebook"></i> Artistas Web
+                </a>
+                <a href="#" class="whatsapp">
+                  <i><i class="fa-brands fa-whatsapp"></i>+1 5555555</i>
+                </a>
+              </div>
+
+              <p>&copy; Artistas Web - 2023 | Todos los derechos reservados.</p>
+          </div>
+
+          </li>
+        </div>
+      </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/35db202371.js"></script>
+
+  <script>
+    fetch('../noticias.json')
+      .then(response => response.json())
+      .then(data => {
+        const listaNoticias = document.getElementById('lista-noticias1');
+        const noticiasPorColumna = Math.ceil(data.length / 2);
+        let contador = 0;
+        let columnaActual = 1;
+        data.forEach(noticia => {
+          if (contador >= noticiasPorColumna) {
+            columnaActual = 2;
+            contador = 0;
+          }
+          const noticiaItem = document.createElement('div');
+          noticiaItem.classList.add('noticia', 'col-md-12');
+          noticiaItem.innerHTML = `
+                    <h3>${noticia.titulo}</h3>
+                    <img src="${noticia.imagen}" alt="${noticia.titulo}" class="img-fluid">
+                    <p>${noticia.parrafo}</p>
+                `;
+          document.getElementById(`lista-noticias${columnaActual}`).appendChild(noticiaItem);
+          contador++;
+        });
+      })
+      .catch(error => console.error('Error al cargar las noticias:', error));
+  </script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+[
+    {
+        "titulo": "Lanzamiento del nuevo smartphone X-Phone",
+        "imagen": "img/noticias/1.jpg",
+        "parrafo": "La compañía XYZ anunció el lanzamiento de su nuevo smartphone X-Phone, que promete revolucionar el mercado con su potente rendimiento y cámara de alta resolución."
+    },
+    {
+        "titulo": "Avance en la tecnología de inteligencia artificial",
+        "imagen": "img/noticias/2.jpg",
+        "parrafo": "Investigadores lograron un importante avance en el campo de la inteligencia artificial, desarrollando un algoritmo que mejora significativamente el reconocimiento de voz y la toma de decisiones."
+    },
+    {
+        "titulo": "Nuevos auriculares inalámbricos con cancelación de ruido",
+        "imagen": "img/noticias/3.jpg",
+        "parrafo": "Una reconocida marca de tecnología presentó sus últimos auriculares inalámbricos con cancelación de ruido, brindando una experiencia auditiva inigualable para los amantes de la música y los viajeros frecuentes."
+    },
+    {
+        "titulo": "Robots autónomos para la industria manufacturera",
+        "imagen": "img/noticias/4.jpeg",
+        "parrafo": "La empresa ABC reveló su nueva línea de robots autónomos diseñados para aumentar la eficiencia y seguridad en las líneas de producción de la industria manufacturera."
+    },
+    {
+        "titulo": "Presentación del nuevo sistema operativo TechOS",
+        "imagen": "img/noticias/5.jpg",
+        "parrafo": "Tech Corporation anunció oficialmente su nuevo sistema operativo, TechOS, con una interfaz moderna y funciones avanzadas que prometen mejorar la productividad y la seguridad de los usuarios."
+    },
+    {
+        "titulo": "Investigación sobre baterías de carga ultrarrápida",
+        "imagen": "img/noticias/6.jpg",
+        "parrafo": "Científicos lograron avances significativos en la investigación de baterías con carga ultrarrápida, lo que podría revolucionar la duración y eficiencia energética de dispositivos electrónicos."
+    }
+]
