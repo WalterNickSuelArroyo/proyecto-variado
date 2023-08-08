@@ -790,7 +790,9 @@ img {
     height: auto;
     margin: 20px;
 }
-
+.formulario-p h2{
+    margin-top: 100px;
+}
 @media only screen and (max-width:900px) {
     .footer .formulario-content {
         width: 85%;

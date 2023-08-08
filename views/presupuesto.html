@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Enlazar el archivo CSS de estilos -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <!-- Menu de Navegacion -->
+    <header id="header">
+        <nav class="menu">
+            <div class="logo-box">
+                <h1><a href="#">Artistas Web</a></h1>
+                <span class="btn-menu"><i class="fas fa-bars"></i></span>
+            </div>
+
+            <div class="list-container">
+                <ul class="lists">
+                    <li><a href="../index.html" class="active">Inicio</a></li>
+                    <li><a href="galeria.html">Galeria</a></li>
+                    <li><a href="presupuesto.html">Presupuesto</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="skew-abajo"></div>
+
+    </header>
+
+    <div class="container mt-5 formulario-p">
+        <h2>Presupuesto</h2>
+        <form id="presupuestoForm">
+            <!-- Parte 1: Datos de contacto -->
+            <h3>Datos de contacto</h3>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" maxlength="15" required>
+            </div>
+            <div class="mb-3">
+                <label for="apellidos" class="form-label">Apellidos</label>
+                <input type="text" class="form-control" id="apellidos" maxlength="40" required>
+            </div>
+            <div class="mb-3">
+                <label for="telefono" class="form-label">Teléfono de contacto</label>
+                <input type="tel" class="form-control" id="telefono" maxlength="9" pattern="[0-9]+" required>
+            </div>
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="correo" required>
+            </div>
+
+            <!-- Parte 2: Presupuesto -->
+            <h3>Presupuesto</h3>
+            <div class="mb-3">
+                <label for="producto" class="form-label">Producto</label>
+                <select class="form-select" id="producto">
+                    <option value="100">Producto 1 - $100</option>
+                    <option value="200">Producto 2 - $200</option>
+                    <option value="300">Producto 3 - $300</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="plazo" class="form-label">Plazo (meses)</label>
+                <input type="number" class="form-control" id="plazo" min="1" value="1">
+            </div>
+            <div class="mb-3">
+                <label>Extras</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="extra1" value="50">
+                    <label class="form-check-label" for="extra1">Extra 1 - $50</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="extra2" value="75">
+                    <label class="form-check-label" for="extra2">Extra 2 - $75</label>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="presupuestoFinal" class="form-label">Presupuesto</label>
+                <input type="text" class="form-control" id="presupuestoFinal" readonly>
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="aceptarCondiciones" required>
+                <label class="form-check-label" for="aceptarCondiciones">Acepto las condiciones de privacidad</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Presupuesto</button>
+            <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
+        </form>
+    </div>
+
+
+
+    <footer class="footer">
+        <div class="skew-arriba"></div>
+
+        <div class="ejeZfooter">
+            <div class="footer-content">
+                <div class="footer-title">
+                    <div class="footer-text">
+                        <li>
+                            <div class="contenedor">
+                                <a href="#" class="facebook">
+                                    <i><i class="fa-brands fa-facebook"></i> Artistas Web
+                                </a>
+                                <a href="#" class="whatsapp">
+                                    <i><i class="fa-brands fa-whatsapp"></i>+1 5555555</i>
+                                </a>
+                            </div>
+
+                            <p>&copy; Artistas Web - 2023 | Todos los derechos reservados.</p>
+                    </div>
+
+                    </li>
+                </div>
+            </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Enlazar el archivo JavaScript -->
+    <script src="../js/presupuesto.js"></script>
+</body>
+
+</html>
