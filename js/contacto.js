@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
-  // Crear un marcador para tu empresa
+  // Crear un marcador para la empresa
   const empresaMarker = L.marker(empresaCoords)
     .bindPopup('Ubicación de Samu') // Mensaje personalizado en el popup
     .addTo(map);

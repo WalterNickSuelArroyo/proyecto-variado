@@ -7,7 +7,6 @@ var activador = true;
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  // Obtener el enlace del menú para la página actual
   const menuInicio = document.querySelector(".menu .list-container ul li a[href='index.html']");
 
   // Agregar la clase 'active' al enlace del menú de la página actual
@@ -36,7 +35,6 @@ btnMenu.addEventListener('click', (event) => {
 
 });
 
-// Add class "active"
 let enlaces = document.querySelectorAll('.lists li a');
 
 enlaces.forEach((element) => {

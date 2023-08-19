@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Mostrar mensaje de éxito
         successMessage.style.display = "block";
 
-        // Redirigir a la página de inicio después de un breve retraso
+        // Redirigir a la página de inicio
         setTimeout(function () {
             window.location.href = "../index.html"; // Actualiza esta URL si es necesario
         }, 2000); // Redirigir después de 2 segundos (ajusta según necesites)
