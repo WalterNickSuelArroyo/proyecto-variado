@@ -6,62 +6,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería de Imágenes</title>
     <script src="../js/jquery.min.js"></script>
-    <link rel="icon" type="./img/png" sizes="32x32" href="../img/favicon.png">
+    <link rel="icon" type="img/png" sizes="32x32" href="../img/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+    <style>
+        /* Estilo para el contenedor de la imagen */
+        .imagen-contenedor {
+            position: relative;
+            overflow: hidden;
+            margin: 20px;
+            padding: 5px;
+        }
+
+        /* Estilo para la superposición */
+        .imagen-contenedor::before {
+            content: '';
+            /* Pseudoelemento para la superposición */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+            /* Cambia el color y la opacidad según tus preferencias */
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Efecto de superposición al pasar el mouse */
+        .imagen-contenedor:hover::before {
+            opacity: 1;
+        }
+    </style>
 </head>
 
-<body>
+<body id="galeria2">
     <header id="header">
         <nav class="menu">
             <div class="logo-box">
-                <img class="logo-principal" src="../img/favicon.png" width="120px">
+                <img class="logo-principal" src="../img/favicon.png" width="120" alt="imagen de empresa">
             </div>
             <div class="samu">
                 <p>Samu</p>
             </div>
             <div class="list-container">
                 <ul class="lists">
-                    <li><a href="../index.html" class="active">Inicio</a></li>
+                    <li><a href="../index.html">Inicio</a></li>
                     <li><a href="galeria.html">Galeria</a></li>
                     <li><a href="presupuesto.html">Presupuesto</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </div>
         </nav>
-        <div class="skew-abajo"></div>
     </header>
     <!-- Contenedor de la galería -->
     <div class="container mt-5">
         <h2 class="mb-4 title-galeria">Galería de Imágenes</h2>
         <div class="row d-flex justify-content-center" id="galeria">
-            <!-- Aquí se cargarán las imágenes desde JavaScript -->
+            <!-- Columna 1 -->
+            <div class="col-md-6">
+                <!-- Imágenes serán generadas aquí -->
+            </div>
+            <!-- Columna 2 -->
+            <div class="col-md-6">
+                <!-- Imágenes serán generadas aquí -->
+            </div>
         </div>
     </div>
-    <!-- Footer -->
+
     <footer class="footer">
         <div class="skew-arriba"></div>
         <div class="ejeZfooter">
             <div class="footer-content">
                 <div class="footer-title">
                     <div class="footer-text">
-                        <li>
-                            <div class="contenedor">
+                        <div class="contenedor">
+                            <div class="links-row">
                                 <a href="#" class="facebook ptt">
-                                    <i><i class="fa-brands fa-facebook"></i> Samu
+                                    <i class="fa-brands fa-facebook"></i> Samu
                                 </a>
                                 <a href="#" class="whatsapp ptt wsp">
-                                    <i><i class="fa-brands fa-whatsapp"></i> 555-123-4567</i>
+                                    <i class="fa-brands fa-whatsapp"></i> 555-123-4567
                                 </a>
                             </div>
-                            <p>Calle Los Galios #123</p>
-                            <p>&copy; Samuel Santos - 2023 | Todos los derechos reservados.</p>
+                            <div class="paragraphs-row">
+                                <p>Calle Los Galios #123</p>
+                                <p>&copy; Sanuel Santos - 2023 | Todos los derechos reservados.</p>
+                            </div>
+                        </div>
                     </div>
-                    </li>
                 </div>
             </div>
+        </div>
     </footer>
+
     <script src="https://kit.fontawesome.com/35db202371.js"></script>
     <script src="../js/galeria.js"></script>
     <script src="../js/bootstrap.min.js"></script>

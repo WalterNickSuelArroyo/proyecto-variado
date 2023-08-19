@@ -645,79 +645,6 @@ body {
     border: 1.5px solid var(--red);
 }
 
-.footer .formulario-content #formulario {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.footer .formulario-content #formulario label {
-    font-size: 20px;
-    text-align: center;
-    color: var(--black);
-    margin: 30px 0px 10px 0px;
-}
-
-.footer .formulario-content #formulario input {
-    width: 90%;
-    height: 40px;
-    margin: auto;
-    border-radius: 24px;
-    outline: none;
-    border: 1.5px solid var(--red);
-    text-align: center;
-    font-size: 18px;
-    color: var(--black);
-}
-
-.footer .formulario-content #formulario textarea {
-    width: 90%;
-    height: 200px;
-    margin: auto;
-    padding: 20px;
-    border-radius: 24px;
-    outline: none;
-    border: 1.5px solid var(--red);
-    font-size: 15px;
-    color: var(--black);
-}
-
-.footer .formulario-content #formulario .send {
-    margin: 30px;
-    display: flex;
-    justify-content: center;
-}
-
-.footer .formulario-content #formulario button {
-    width: 120px;
-    height: 40px;
-    text-align: center;
-    line-height: 40px;
-    font-size: 20px;
-    background: var(--red);
-    border: none;
-    outline: none;
-    border-radius: 20px;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-.footer .formulario-content #formulario button:hover {
-    background: var(--blue);
-}
-
-.footer .formulario-content #formulario .mensaje-form {
-    width: 100%;
-    margin: auto;
-    padding: 20px;
-}
-
-.footer .formulario-content #formulario .mensaje-form p {
-    font-size: 19px;
-    color: var(--black);
-    line-height: 35px;
-}
 
 .footer .footer-text {
     position: absolute;
@@ -857,3 +784,28 @@ img {
         font-size: 17px;
     }
 }
+.noticia img {
+    max-width: 95%;
+    /* Ajusta el ancho máximo de la imagen al ancho de su contenedor */
+    height: auto;
+    /* Mantiene la proporción de aspecto original */
+  }
+
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .links-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .paragraphs-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

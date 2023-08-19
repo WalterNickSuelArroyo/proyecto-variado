@@ -7,43 +7,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Estilos Css -->
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
-  <link rel="icon" type="./img/png" sizes="32x32" href="../img/favicon.png">
-  <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500,700&display=swap" rel="stylesheet">
   <script src="../js/jquery.min.js"></script>
+  <link rel="icon" type="img/png" sizes="32x32" href="../img/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500,700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOn9cxC06EjhO8dWJCBfgSSoxOq6L3laI&callback=inicializarMapa"
-    async defer></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin="">
+
   <style>
-    #mapa {
-      height: 400px;
+    #map {
+      height: 50vh;
+      width: 70vw;;
+    }
+
+    .select_l {
+      padding: 10px;
+      margin-bottom: 15px;
     }
   </style>
 </head>
 
-<body>
-  <!-- Ir Arriba -->
-  <div class="go-top">
-    <span class="fas fa-angle-up"></span>
-  </div>
-  <!-- Menu de Navegacion -->
+<body id="contacto">
   <header id="header">
     <nav class="menu">
       <div class="logo-box">
-        <img class="logo-principal" src="../img/favicon.png" width="120px">
-        <span class="btn-menu"><i class="fas fa-bars"></i></span>
+        <img class="logo-principal" src="../img/favicon.png" width="120" alt="imagen de empresa">
       </div>
       <div class="samu">
         <p>Samu</p>
       </div>
       <div class="list-container">
         <ul class="lists">
-          <li><a href="../index.html" class="active">Inicio</a></li>
-          <li><a href="../views/galeria.html">Galeria</a></li>
-          <li><a href="../views/presupuesto.html">Presupuesto</a></li>
-          <li><a href="../views/contacto.html">Contacto</a></li>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="galeria.html">Galeria</a></li>
+          <li><a href="presupuesto.html">Presupuesto</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </div>
     </nav>
@@ -61,41 +64,70 @@
         </ul>
       </div>
       <div class="col-md-12">
-        <h3 class="mb-3">Ubicación en el Mapa</h3>
-        <div id="mapa"></div>
+        <h3 class="mb-3">Seleccione en que ciudad se ubica</h3>
+
+        <select name="select-location" id="select-location" class="select_l">
+          <option value="-1">Seleccione un lugar:</option>
+          <option value="6.636254,-73.223129">Barichara-Santander</option>
+          <option value="12.19602,-72.147218">Cabo de la Vela-La Guajira</option>
+          <option value="10.42278,-75.539217">Castillo San Felipe Cartagena-Bolivar</option>
+          <option value="2.265124,-73.794523">Caño Cristales-Meta</option>
+          <option value="3.233851,-75.168934">Desierto de Tatacoa-Huila</option>
+          <option value="6.233825,-75.167062">Guatape-Antioquia</option>
+          <option value="4.945885,-73.825740">Guatavita-Cundinamarca</option>
+          <option value="2.135151,-76.410226">Parque Purace-Cauca</option>
+          <option value="1.888593,-76.295127">San Agustín-Huila</option>
+          <option value="5.638118,-73.526864">Villa de Leiva-Boyacá</option>
+        </select>
+        <div id="map"></div>
       </div>
     </div>
   </div>
 
   <hr>
-  <small>
-    </div>
-    </div>
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="skew-arriba"></div>
-      <div class="ejeZfooter">
+  <footer class="footer">
+    <div class="skew-arriba"></div>
+    <div class="ejeZfooter">
         <div class="footer-content">
-          <div class="footer-title">
-            <div class="footer-text">
-              <li>
-                <div class="contenedor">
-                  <a href="#" class="facebook ptt">
-                    <i><i class="fa-brands fa-facebook"></i> Samu
-                  </a>
-                  <a href="#" class="whatsapp ptt wsp">
-                    <i><i class="fa-brands fa-whatsapp"></i> 555-123-4567</i>
-                  </a>
+            <div class="footer-title">
+                <div class="footer-text">
+                    <div class="contenedor">
+                        <div class="links-row">
+                            <a href="#" class="facebook ptt">
+                                <i class="fa-brands fa-facebook"></i> Samu
+                            </a>
+                            <a href="#" class="whatsapp ptt wsp">
+                                <i class="fa-brands fa-whatsapp"></i> 555-123-4567
+                            </a>
+                        </div>
+                        <div class="paragraphs-row">
+                            <p>Calle Los Galios #123</p>
+                            <p>&copy; Sanuel Santos - 2023 | Todos los derechos reservados.</p>
+                        </div>
+                    </div>
                 </div>
-                <p>Calle Los Galios #123</p>
-                <p>&copy; Samuel Santos - 2023 | Todos los derechos reservados.</p>
             </div>
-            </li>
-          </div>
         </div>
-    </footer>
-    <script src="https://kit.fontawesome.com/35db202371.js"></script>
-    <script src="../js/contacto.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/contacto.js"></script>
+    </div>
+</footer>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <script src="https://kit.fontawesome.com/35db202371.js"></script>
+  <script src="../js/contacto.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script>
+    // Crear una cookie con SameSite y Secure
+    function setCookie(name, value) {
+      document.cookie = name + "=" + value + "; samesite=strict; secure";
+    }
+
+    // Llamar a la función para establecer las cookies
+    setCookie("__utma", "valor_utm");
+    setCookie("__utmz", "valor_utmz");
+    setCookie("_ga", "valor_ga");
+    setCookie("_gid", "valor_gid");
+    setCookie("_ga_79NC4YX69Q", "valor_ga_79NC4YX69Q");
+  </script>
 </body>

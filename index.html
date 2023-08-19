@@ -11,9 +11,39 @@
   <!-- Estilos Css -->
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-  <link rel="icon" type="./img/png" sizes="32x32" href="./img/favicon.png">
+  <link rel="icon" type="img/png" sizes="32x32" href="./img/favicon.png">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:400,500,700&display=swap" rel="stylesheet">
+  <style>
+    /* Ajustar el tamaño de las imágenes de las noticias */
+    .noticia img {
+      max-width: 95%;
+      /* Ajusta el ancho máximo de la imagen al ancho de su contenedor */
+      height: auto;
+      /* Mantiene la proporción de aspecto original */
+    }
+
+    .contenedor {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .links-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .paragraphs-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Add your other styles as needed */
+  </style>
 </head>
 
 <body>
@@ -26,7 +56,7 @@
   <header id="header">
     <nav class="menu">
       <div class="logo-box">
-        <img class="logo-principal" src="img/favicon.png" width="120px">
+        <img class="logo-principal" src="img/favicon.png" width="120" alt="imagen de empresa">
       </div>
       <div class="samu">
         <p>Samu</p>
@@ -81,7 +111,10 @@
             <img src="img/proyec2.png" alt="">
           </div>
           <div class="skew-abajo"></div>
+        </div>
+      </div>
     </section>
+
     <!-- Testimonios -->
     <section class="testimonios">
       <div class="testimonios-title">
@@ -120,29 +153,33 @@
       </div>
     </section>
   </main>
-  <!-- Footer -->
   <footer class="footer">
     <div class="skew-arriba"></div>
     <div class="ejeZfooter">
       <div class="footer-content">
         <div class="footer-title">
           <div class="footer-text">
-            <li>
-              <div class="contenedor">
+            <div class="contenedor">
+              <div class="links-row">
                 <a href="#" class="facebook ptt">
-                  <i><i class="fa-brands fa-facebook"></i> Samu
+                  <i class="fa-brands fa-facebook"></i> Samu
                 </a>
                 <a href="#" class="whatsapp ptt wsp">
-                  <i><i class="fa-brands fa-whatsapp"></i> 555-123-4567</i>
+                  <i class="fa-brands fa-whatsapp"></i> 555-123-4567
                 </a>
               </div>
-              <p>Calle Los Galios #123</p>
-              <p>&copy; Sanuel Santos - 2023 | Todos los derechos reservados.</p>
+              <div class="paragraphs-row">
+                <p>Calle Los Galios #123</p>
+                <p>&copy; Sanuel Santos - 2023 | Todos los derechos reservados.</p>
+              </div>
+            </div>
           </div>
-          </li>
         </div>
       </div>
+    </div>
   </footer>
+
+
   <!-- Scripts -->
   <script src="https://kit.fontawesome.com/35db202371.js"></script>
 

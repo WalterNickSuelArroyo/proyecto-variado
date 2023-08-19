@@ -7,25 +7,25 @@
     <title>Galería de Imágenes</title>
     <!-- Enlazar el archivo CSS de estilos -->
     <script src="../js/jquery.min.js"></script>
-    <link rel="icon" type="./img/png" sizes="32x32" href="../img/favicon.png">
+    <link rel="icon" type="img/png" sizes="32x32" href="../img/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
-<body>
+<body id="presupuesto">
     <!-- Menu de Navegacion -->
     <header id="header">
         <nav class="menu">
             <div class="logo-box">
-                <img class="logo-principal" src="../img/favicon.png" width="120px">
+                <img class="logo-principal" src="../img/favicon.png" width="120" alt="imagen de empresa">
             </div>
             <div class="samu">
                 <p>Samu</p>
             </div>
             <div class="list-container">
                 <ul class="lists">
-                    <li><a href="../index.html" class="active">Inicio</a></li>
+                    <li><a href="../index.html">Inicio</a></li>
                     <li><a href="galeria.html">Galeria</a></li>
                     <li><a href="presupuesto.html">Presupuesto</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
@@ -42,18 +42,22 @@
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nombre" maxlength="15" required>
+                <span id="nombreError" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label for="apellidos" class="form-label">Apellidos</label>
                 <input type="text" class="form-control" id="apellidos" maxlength="40" required>
+                <span id="apellidosError" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label for="telefono" class="form-label">Teléfono de contacto</label>
                 <input type="tel" class="form-control" id="telefono" maxlength="9" pattern="[0-9]+" required>
+                <span id="telefonoError" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label for="correo" class="form-label">Correo electrónico</label>
                 <input type="email" class="form-control" id="correo" required>
+                <span id="correoError" class="text-danger"></span>
             </div>
             <!-- Parte 2: Presupuesto -->
             <h3>Presupuesto</h3>
@@ -91,32 +95,38 @@
             <button type="submit" class="btn btn-primary">Enviar Presupuesto</button>
             <button type="reset" class="btn btn-secondary">Limpiar Formulario</button>
         </form>
+        <div id="successMessage" class="alert alert-success" style="display: none;">
+            Presupuesto enviado
+        </div>
     </div>
-    <!-- Footer -->
     <footer class="footer">
         <div class="skew-arriba"></div>
         <div class="ejeZfooter">
             <div class="footer-content">
                 <div class="footer-title">
                     <div class="footer-text">
-                        <li>
-                            <div class="contenedor">
+                        <div class="contenedor">
+                            <div class="links-row">
                                 <a href="#" class="facebook ptt">
-                                    <i><i class="fa-brands fa-facebook"></i> Samu
+                                    <i class="fa-brands fa-facebook"></i> Samu
                                 </a>
                                 <a href="#" class="whatsapp ptt wsp">
-                                    <i><i class="fa-brands fa-whatsapp"></i> 555-123-4567</i>
+                                    <i class="fa-brands fa-whatsapp"></i> 555-123-4567
                                 </a>
                             </div>
-                            <p>Calle Los Galios #123</p>
-                            <p>&copy; Samuel Santos - 2023 | Todos los derechos reservados.</p>
+                            <div class="paragraphs-row">
+                                <p>Calle Los Galios #123</p>
+                                <p>&copy; Sanuel Santos - 2023 | Todos los derechos reservados.</p>
+                            </div>
+                        </div>
                     </div>
-                    </li>
                 </div>
             </div>
+        </div>
     </footer>
     <script src="https://kit.fontawesome.com/35db202371.js"></script>
     <script src="../js/presupuesto.js"></script>
     <script src="../js/bootstrap.min.js"></script>
 </body>
+
 </html>

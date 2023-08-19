@@ -4,6 +4,49 @@ document.addEventListener("DOMContentLoaded", function () {
     const plazoInput = document.getElementById("plazo");
     const extrasCheckboxes = document.querySelectorAll('input[type="checkbox"][value]');
     const presupuestoFinalInput = document.getElementById("presupuestoFinal");
+    const successMessage = document.getElementById("successMessage");
+
+    const nombre = document.getElementById("nombre");
+    const apellidos = document.getElementById("apellidos");
+    const telefono = document.getElementById("telefono");
+    const correo = document.getElementById("correo");
+
+    const nombreError = document.getElementById("nombreError");
+    const apellidosError = document.getElementById("apellidosError");
+    const telefonoError = document.getElementById("telefonoError");
+    const correoError = document.getElementById("correoError");
+
+    nombre.addEventListener("input", function () {
+        if (nombre.value === "") {
+            nombreError.textContent = "Por favor, ingrese un nombre.";
+        } else {
+            nombreError.textContent = "";
+        }
+    });
+
+    apellidos.addEventListener("input", function () {
+        if (apellidos.value === "") {
+            apellidosError.textContent = "Por favor, ingrese los apellidos.";
+        } else {
+            apellidosError.textContent = "";
+        }
+    });
+
+    telefono.addEventListener("input", function () {
+        if (telefono.value === "") {
+            telefonoError.textContent = "Por favor, ingrese un número de teléfono.";
+        } else {
+            telefonoError.textContent = "";
+        }
+    });
+
+    correo.addEventListener("input", function () {
+        if (correo.value === "") {
+            correoError.textContent = "Por favor, ingrese un correo electrónico.";
+        } else {
+            correoError.textContent = "";
+        }
+    });
 
     form.addEventListener("input", function () {
         const producto = parseFloat(productoSelect.value);
@@ -25,12 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        const nombre = document.getElementById("nombre").value;
-        const apellidos = document.getElementById("apellidos").value;
-        const telefono = document.getElementById("telefono").value;
-        const correo = document.getElementById("correo").value;
+        const nombreValue = nombre.value;
+        const apellidosValue = apellidos.value;
+        const telefonoValue = telefono.value;
+        const correoValue = correo.value;
 
-        if (!validarDatosContacto(nombre, apellidos, telefono, correo)) {
+        if (!validarDatosContacto(nombreValue, apellidosValue, telefonoValue, correoValue)) {
             return;
         }
 
@@ -47,7 +90,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const descuento = calcularDescuento(plazo);
         const presupuestoFinal = producto + extrasTotal - descuento;
 
-        document.getElementById("presupuestoFinal").value = `$${presupuestoFinal.toFixed(2)}`;
+        presupuestoFinalInput.value = `$${presupuestoFinal.toFixed(2)}`;
+
+        // Mostrar mensaje de éxito
+        successMessage.style.display = "block";
+
+        // Redirigir a la página de inicio después de un breve retraso
+        setTimeout(function () {
+            window.location.href = "../index.html"; // Actualiza esta URL si es necesario
+        }, 2000); // Redirigir después de 2 segundos (ajusta según necesites)
     });
 
     function validarDatosContacto(nombre, apellidos, telefono, correo) {
@@ -89,4 +140,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         return 0;
     }
+    // Obtener el enlace del menú para la página actual
+    const menuPresupuesto = document.querySelector(".menu .list-container ul li a[href='presupuesto.html']");
+
+    // Agregar la clase 'active' al enlace del menú de la página actual
+    menuPresupuesto.classList.add("active");
 });

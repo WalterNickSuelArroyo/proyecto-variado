@@ -5,6 +5,17 @@ let menu = document.querySelector('.list-container');
 let menuContent = document.querySelector('.menu');
 var activador = true;
 
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Obtener el enlace del menú para la página actual
+  const menuInicio = document.querySelector(".menu .list-container ul li a[href='index.html']");
+
+  // Agregar la clase 'active' al enlace del menú de la página actual
+  menuInicio.classList.add("active");
+});
+
+
+
 btnMenu.addEventListener('click', (event) => {
 
   //Icon X
@@ -89,4 +100,5 @@ verAbajo.addEventListener('click', () => {
   document.body.scrollTop = 600;
   document.documentElement.scrollTop = 600;
 });
+
 
